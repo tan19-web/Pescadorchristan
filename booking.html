@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Trip - Quick Escape</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+  <style>
+    body {
+      background-image: url('Images/2.jpg'); 
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7); 
+      padding: 50px;
+      border-radius: 10px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .overlay h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .form-group i {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      color: #0e1318;
+    }
+
+    .form-control {
+      padding-left: 2.5rem;
+    }
+
+    .hero-section {
+      background-color: #212cf8;
+      color: white;
+      text-align: center;
+      padding: 50px 15px;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+    }
+
+    h2, p {
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .overlay {
+        padding: 30px;
+      }
+
+      .form-row .form-group {
+        margin-bottom: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .overlay h2 {
+        font-size: 2rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+
+      .form-control {
+        padding-left: 1.5rem;
+      }
+
+      .form-group i {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Quick Escape</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="destination.html">Destinations</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+        <li class="nav-item active"><a class="nav-link" href="booking.html">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1>Book Your Dream Vacation Today!</h1>
+    <p>Choose your destination, fill in the details, and let us take care of the rest!</p>
+  </section>
+
+  <!-- Booking Form Section -->
+  <section class="container mt-5">
+    <div class="overlay">
+      <h2 class="text-center">Plan Your Escape</h2>
+  
+      <form class="mt-4" id="bookingForm">
+        <div class="form-row">
+          <!-- Destination Field -->
+          <div class="form-group col-md-6 col-12 position-relative">
+            <label for="destination">Where are you going?</label>
+            <i class="fas fa-bed"></i>
+            <input type="text" class="form-control" id="destination" name="destination" placeholder="Enter destination" required>
+          </div>
+  
+          <!-- Check-in and Check-out Dates -->
+          <div class="form-group col-md-3 col-6 position-relative">
+            <label for="checkin">Check-in Date</label>
+            <i class="fas fa-calendar-alt"></i>
+            <input type="date" class="form-control" id="checkin" name="checkin" required>
+          </div>
+          <div class="form-group col-md-3 col-6 position-relative">
+            <label for="checkout">Check-out Date</label>
+            <i class="fas fa-calendar-alt"></i>
+            <input type="date" class="form-control" id="checkout" name="checkout" required>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <!-- Guests Selection -->
+          <div class="form-group col-md-4 col-12">
+            <label for="guests">Guests</label>
+            <select class="form-control" id="guests" name="guests">
+              <option value="1">1 adult</option>
+              <option value="2">2 adults</option>
+              <option value="3">3 adults</option>
+              <option value="4">4 adults</option>
+            </select>
+          </div>
+  
+          <!-- Children -->
+          <div class="form-group col-md-4 col-12">
+            <label for="children">Children</label>
+            <select class="form-control" id="children" name="children">
+              <option value="0">0 children</option>
+              <option value="1">1 child</option>
+              <option value="2">2 children</option>
+            </select>
+          </div>
+  
+          <!-- Rooms -->
+          <div class="form-group col-md-4 col-12">
+            <label for="rooms">Rooms</label>
+            <select class="form-control" id="rooms" name="rooms">
+              <option value="1">1 room</option>
+              <option value="2">2 rooms</option>
+              <option value="3">3 rooms</option>
+            </select>
+          </div>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="button" class="btn btn-primary btn-block mt-3" onclick="submitBooking()">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    function submitBooking() {
+      alert("Thank you! Enjoy your tour!");
+    }
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
